@@ -2,29 +2,45 @@
 <html>
 <head>
 	<title>BLOG</title>
+	{% load static %}
+	<link rel="stylesheet" type="text/css" href="{% static 'Blog/common.css' %}">
+	<meta name="viewport" content="user-scalable=no,width = device-width,height=device-height,initial-scale=1.0,maximum-scale=1.0">
 </head>
 <body>
-<div class="header"></div>
-<div class="Aticles">
-	{% if article_list %}
-	<ul>
-		{% for item in article_list %}
-		<li>
-			<a href="articles/{{item.pageID}}">
-				<h3>{{item.title}}</h3>
-			</a>
-			<br/>
-			<p>{{item.content}}</p>
-		</li>
-		{% endfor %}
-	</ul>
-	{% else %}
-	<p>Wow!We got a empty blog!</p>
-	{% endif %}
-</div>
-<!-- side bar not show in small screen. -->
-<div class="Sidebar"></div>
+<div id="MAIN">
+	<div class="header">
+		<p>BLOG</p>
+	</div>
+
+	<!-- side bar not show in small screen. -->
+	<div class="Sidebar">
+		<div style="text-align: center;">
+			{% load static %}
+			<img src="{% static 'Blog/image/head.jpg' %}">
+		</div>
+		<p class="center">Life</p>
+		<p class="center">is not easy</p>
+		<p class="center">as we see,or as we know!</p>
+	</div>
+
+	<div class="Aticles">
+		{% if article_list %}
+		<ul >
+			{% for item in article_list %}
+			<li class="article">
+				<a href="articles/{{item.pageID}}">
+					<h3>{{item.title}}</h3>
+				</a>
+				<p>{{item.content}}</p>
+			</li>
+			{% endfor %}
+		</ul>
+		{% else %}
+		<p>Wow!We got a empty blog!</p>
+		{% endif %}
+	</div>
 <!-- footer also not show in small screen.-->
 <div class="footer"></div>
+</div>
 </body>
 </html>

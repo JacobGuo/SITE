@@ -1,0 +1,97 @@
+
+/* clear block elements's margin&padding */
+html,body,p,ul,li,div{margin:0;padding: 0;}
+body{background-color: gray;}
+#MAIN{
+	width: 100%;
+	max-width: 960px;
+	background-color: white;
+}
+
+div.header{
+	background-color: #00FFCC;
+	height: 300px;
+	background-image: url('image/blueOcean.jpg');
+	padding: 1px;
+}
+div.header p{
+	margin-top: 250px;
+	text-align: center;
+	color: white;
+	font-weight: bold;
+	font-size: 35px;
+}
+div.Aticles
+{
+	margin-right: 400px;
+	margin-left: 0;
+	width: auto;
+	max-height: 1000px;/* sync with sideBar */
+	overflow: hidden;
+}
+li.article{
+	height: 200px;
+	padding: 1px;
+	overflow: hidden;
+	border-bottom: 1px solid gray;
+}
+h3{
+	text-align: center;
+}
+li h3{
+	text-align: left;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+li a{
+	text-decoration: none;
+	color: #FFCC66;
+}
+li p{
+	margin-left: 5px;
+	margin-right: 5px;
+	color: #333333;
+}
+/* sidebar */
+div.Sidebar{
+	background-color: white;
+	width: 400px;
+	float: right;
+	height:1000px;
+}
+div.Sidebar img{
+	display: inline-block;
+	margin-top: 50px;
+	width: 180px;
+	height: 180px;
+}
+p.center{text-align: center;}
+
+
+@media all and (device-width: 375px) and (-webkit-min-device-pixel-ratio:2){
+	div.header{
+		height: 124px;
+	}
+	div.header p{
+		margin-top: 85px;font-size: 25px;
+	}
+	li.article{
+		height: 140px;
+	}
+	div.Sidebar{display: none;float: none;}
+	div.Aticles{margin-right: 0px;}
+}
+@media screen and (min-width: 960px){
+	#MAIN{
+		width: 960px;
+		margin-left: auto;
+		margin-right: auto;
+		border-left: 1px solid gray;
+		border-right: 1px solid gray;
+	}
+}
+@media screen and (max-width: 600px){
+	/* also hide sideBar */
+	div.Sidebar{display:none;}
+	div.Aticles{margin-right: auto;}
+}
