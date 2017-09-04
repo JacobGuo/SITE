@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+{% if blog %}
+<h3>{{blog.title}}</h3>
+<h4 style="text-align: right;">{{blog.subTitle}}</h4>
+<p>{{blog.content}}</p>
+{% else %}
+	<p>Content disappeared!!!</p>
+{% endif %}
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>BLOG</title>
+</head>
+<body>
+<div class="header"></div>
+<div class="Aticles">
+	{% if article_list %}
+	<ul>
+		{% for item in article_list %}
+		<li>
+			<a href="articles/{{item.pageID}}">
+				<h3>{{item.title}}</h3>
+			</a>
+			<br/>
+			<p>{{item.content}}</p>
+		</li>
+		{% endfor %}
+	</ul>
+	{% else %}
+	<p>Wow!We got a empty blog!</p>
+	{% endif %}
+</div>
+<!-- side bar not show in small screen. -->
+<div class="Sidebar"></div>
+<!-- footer also not show in small screen.-->
+<div class="footer"></div>
+</body>
+</html>
